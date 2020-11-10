@@ -4,6 +4,28 @@ Listas son de tipo dinamica
 Los arreglos no pueden modificar en tiempo de ejecucion
 
 --------------------------------------------------------------------------------------------------------"""
+import sys
+
+
+#esta funcion de vuelve FALSE O TRUE  si una variable es cadena o no
+def valoracion(cadenaEvaluada):
+
+    evaluacion(cadenaEvaluada.isalpha())
+
+
+#esta funcion determinara si el programa funciona bien o se detiene todo
+def evaluacion(valor):
+    if valor == False:
+       print("No digitaste un numero correcto el programa no lo puede procesar aun,gracias") 
+       sys.exit() 
+           
+        
+    else:
+
+         print("todo marcha sin problemas")
+        
+
+  
 
 
 
@@ -12,11 +34,17 @@ lista = []
 
 #lanzamos el mensaje 
 cadena = input("Introduce una cadena. (--exit-- para temianar):")
+valoracion(cadena)   
+        
+
 
 #mientras no digite la opcion de salir el programa seguira agregando datos 
 while cadena != "exit":
-    lista.append(cadena)#el metdo append que nos permite agregar nuevos elementos en la lista
-    cadena = input("Introduce una cadena. (--exit-- para temianar):")
+        valoracion(cadena) #evaluamos la variable constantemente
+
+        lista.append(cadena)#el metdo append que nos permite agregar nuevos elementos en la lista
+        cadena = input("Introduce una cadena. (--exit-- para temianar):")
+  
 
 #cuando  se cumpla la anteiror condicion de ----exit--- nos mandar por defecto con el truen nos mandara al menu
 while True:
